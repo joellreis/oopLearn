@@ -1,0 +1,11 @@
+classdef AccountManager
+    
+    methods (Static)
+        if BA.AccountBalance < 0
+            if BA.AccountBalance < -200
+                BA.AccountStatus = 'closed';
+            else
+                BA.AccountStatus = 'overdrwa
+    end
+    
+end

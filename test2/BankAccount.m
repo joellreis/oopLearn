@@ -11,14 +11,14 @@ classdef BankAccount < handle
         AccountListener
     end
     events
-        InsuffcientFunds
+        InsufficientFunds
     end
     
     methods
         function BA = BankAccount(AccountNumber, InitialBalance)
             BA.AccountNumber = AccountNumber;
             BA.AccountBalance = InitialBalance;
-            BA.AccountListener = AccountManager.addAccout(BA);
+            BA.AccountListener = AccountManager.addAccount(BA);
         end
         
         function deposit(BA,amt)
@@ -30,7 +30,7 @@ classdef BankAccount < handle
         
         function withdraw(BA,amt)
             if (strcmp(BA.AccountStatus,'closed') && BA.AccountBalance<0)
-                disp(['Account ',num2str(BA.AccountNumber),' has been closed.']
+                disp(['Account ',num2str(BA.AccountNumber),' has been closed.'])
                 return
             end
             newbal = BA.AccountBalance - amt;
